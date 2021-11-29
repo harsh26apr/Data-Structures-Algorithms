@@ -22,7 +22,7 @@ int printTour(struct petrolPump arr[], int n)
       And we have reached first petrol pump again with 0 or more petrol */
     while (end != start || currFuel < 0) 
     { 
-        // If curremt amount of petrol in truck becomes less than 0, then 
+        // If curremt amount of petrol in car becomes less than 0, then 
         // remove the starting petrol pump from tour 
         while (currFuel < 0 && start != end) 
         { 
