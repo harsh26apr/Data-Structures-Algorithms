@@ -7,6 +7,21 @@ struct node{
     struct node* right;
 };
 
+struct node * searchIter(struct node* root, int key){
+    while(root!=NULL){
+        if(key == root->data){
+            return root;
+        }
+        else if(key<root->data){
+            root = root->left;
+        }
+        else{
+            root = root->right;
+        }
+    }
+    return NULL;
+}
+
 struct node* createNode(int data){
     struct node *n; // creating a node pointer
     n = (struct node *) malloc(sizeof(struct node)); // Allocating memory in the heap
@@ -57,20 +72,6 @@ int isBST(struct  node* root){
     }
 }
 
-struct node * searchIter(struct node* root, int key){
-    while(root!=NULL){
-        if(key == root->data){
-            return root;
-        }
-        else if(key<root->data){
-            root = root->left;
-        }
-        else{
-            root = root->right;
-        }
-    }
-    return NULL;
-}
 
 void insert(struct node *root, int key){
    struct node *prev = NULL;
